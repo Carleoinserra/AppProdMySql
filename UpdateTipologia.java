@@ -130,10 +130,10 @@ public class UpdateTipologia {
 	        
 	        else if (scelta == 4) {
 	        	// abbiamo creato la query con il segnaposto
-	            String selectQuery = "SELECT * FROM ListaDj WHERE nome = (?)";
+	            String selectQuery = "SELECT * FROM AppProdotti WHERE nome = (?)";
 	            
 	            // andiamo a prendere in input il genere che vogliamo cercare
-	            System.out.println("Scrivi il nome del dj da ricercare: ");
+	            System.out.println("Scrivi il nome del prodotto da ricercare: ");
 	            String nome = input.next();
 	           // effetuiamo la connessione con i dati precedentemente assegnati
 	            
@@ -149,18 +149,18 @@ public class UpdateTipologia {
 	            	     //iteriamo il result set e stampiamo i riusltati della ricerca
 	            	while (rs.next()) {
 	            	String nome1 = rs.getString("nome");
-	                String mansione = rs.getString("tipologia");
-	               String resident = rs.getString("resident");
+	            	String marca = rs.getString("marca");
+	            	double prezzo = rs.getDouble("prezzo");
 	                System.out.println(nome1);
-	                System.out.println(mansione);
-	                System.out.println(resident);
+	                System.out.println(marca);
+	                System.out.println(prezzo);
 	            	}
 	            	
 	        }
 	        
 	        else if (scelta == 5) {
-	        	String query = "DELETE FROM ListaDj WHERE nome = (?)";
-	     	        System.out.println("Nome del dj: ");
+	        	String query = "DELETE FROM AppProdotti WHERE nome = (?)";
+	     	        System.out.println("Nome del prodotto: ");
 	     	        Scanner input6 = new Scanner(System.in);
 	     	        String nome = input6.nextLine();
 	     	        
@@ -180,7 +180,7 @@ public class UpdateTipologia {
 	        	     }
 	        	     
 	        	     else {
-	        	    	 System.out.println("Dj non trovato!!!");
+	        	    	 System.out.println("Prodotto non trovato!!!");
 	        	     }}
 	        	
 	        	
